@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 async function startApp(){
     try{
-        await mongoose.connect('mongodb+srv://Vlad:0000@cluster0.5usrp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+        await mongoose.connect('mongodb://Vlad:0000@cluster0-shard-00-00.5usrp.mongodb.net:27017,cluster0-shard-00-01.5usrp.mongodb.net:27017,cluster0-shard-00-02.5usrp.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-141dm8-shard-0&authSource=admin&retryWrites=true&w=majority')
         app.listen(PORT, () => {
             console.log('сервер работает')
         })
